@@ -1,0 +1,511 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap');
+
+
+/* =====================================================
+   CORES
+===================================================== */
+
+:root {
+
+    --fundo: #101114;
+
+    --painel: #181a1f;
+
+    --painel-claro: #22252c;
+
+    --amarelo: #e8ff5a;
+
+    --roxo: #9b7cff;
+
+    --branco: #f4f4f0;
+
+    --cinza: #999da8;
+
+    --linha: #343740;
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    padding: 30px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(155, 124, 255, 0.15),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(232, 255, 90, 0.08),
+            transparent 30%
+        ),
+
+        var(--fundo);
+
+    color: var(--branco);
+
+    font-family: 'Space Grotesk', sans-serif;
+
+}
+
+
+/* =====================================================
+   CAIXA PRINCIPAL
+===================================================== */
+
+.caixa-principal {
+
+    width: 100%;
+
+    max-width: 950px;
+
+    min-height: 650px;
+
+    padding: 55px;
+
+    background: var(--painel);
+
+    border: 1px solid var(--linha);
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow:
+        20px 20px 0 rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* decoração lateral */
+
+.caixa-principal::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    right: -80px;
+
+    top: -80px;
+
+    border: 35px solid var(--amarelo);
+
+    border-radius: 50%;
+
+    opacity: 0.08;
+
+}
+
+
+/* =====================================================
+   TÍTULO
+===================================================== */
+
+h1 {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 65px;
+
+    font-family: 'Syne', sans-serif;
+
+    font-size: clamp(45px, 7vw, 82px);
+
+    line-height: 0.95;
+
+    font-weight: 800;
+
+    letter-spacing: -4px;
+
+    color: var(--branco);
+
+    text-align: left;
+
+}
+
+
+h1::first-line {
+
+    color: var(--amarelo);
+
+}
+
+
+/* =====================================================
+   PERGUNTAS
+===================================================== */
+
+.caixa-perguntas {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+
+    margin: 0 auto 45px;
+
+    padding-left: 25px;
+
+    border-left: 4px solid var(--amarelo);
+
+    font-family: 'Syne', sans-serif;
+
+    font-size: clamp(25px, 4vw, 40px);
+
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    text-align: left;
+
+    color: var(--branco);
+
+}
+
+
+/* =====================================================
+   ALTERNATIVAS
+===================================================== */
+
+.caixa-alternativas {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 16px;
+
+}
+
+
+/* =====================================================
+   BOTÕES
+===================================================== */
+
+button {
+
+    position: relative;
+
+    min-height: 150px;
+
+    padding: 25px;
+
+    background: var(--painel-claro);
+
+    border: 1px solid var(--linha);
+
+    border-radius: 8px;
+
+    color: var(--branco);
+
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
+
+}
+
+
+/* marcador */
+
+button::before {
+
+    content: "01";
+
+    display: block;
+
+    margin-bottom: 20px;
+
+    font-family: 'Syne', sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: var(--amarelo);
+
+}
+
+
+.caixa-alternativas button:nth-child(2)::before {
+
+    content: "02";
+
+    color: var(--roxo);
+
+}
+
+
+/* hover */
+
+button:hover {
+
+    transform: translateY(-6px);
+
+    background: var(--amarelo);
+
+    border-color: var(--amarelo);
+
+    color: #151515;
+
+    box-shadow:
+        8px 8px 0 rgba(155, 124, 255, 0.35);
+
+}
+
+
+button:hover::before {
+
+    color: #151515;
+
+}
+
+
+/* =====================================================
+   RESULTADO
+===================================================== */
+
+.caixa-resultado {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 55px;
+
+    padding: 45px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #24212f,
+            #17181d
+        );
+
+    border: 1px solid #3b3949;
+
+    text-align: left;
+
+    overflow: hidden;
+
+}
+
+
+/* decoração do resultado */
+
+.caixa-resultado::before {
+
+    content: "2049";
+
+    position: absolute;
+
+    right: -25px;
+
+    bottom: -70px;
+
+    font-family: 'Syne', sans-serif;
+
+    font-size: 180px;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    color: rgba(155, 124, 255, 0.08);
+
+}
+
+
+/* =====================================================
+   TEXTO DO RESULTADO
+===================================================== */
+
+.texto-resultado {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 750px;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #d9d9dd;
+
+}
+
+
+/* =====================================================
+   ANIMAÇÃO
+===================================================== */
+
+.caixa-perguntas {
+
+    animation: entrada 0.45s ease;
+
+}
+
+
+@keyframes entrada {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateX(-20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateX(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media (max-width: 700px) {
+
+    body {
+
+        padding: 15px;
+
+        align-items: flex-start;
+
+    }
+
+
+    .caixa-principal {
+
+        margin-top: 15px;
+
+        padding: 35px 25px;
+
+        min-height: auto;
+
+    }
+
+
+    h1 {
+
+        font-size: 48px;
+
+        letter-spacing: -2px;
+
+        margin-bottom: 50px;
+
+    }
+
+
+    .caixa-perguntas {
+
+        padding-left: 18px;
+
+        font-size: 28px;
+
+    }
+
+
+    .caixa-alternativas {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    button {
+
+        min-height: 125px;
+
+        padding: 20px;
+
+    }
+
+
+    .caixa-resultado {
+
+        padding: 30px 25px;
+
+    }
+
+
+    .texto-resultado {
+
+        font-size: 16px;
+
+    }
+
+}
